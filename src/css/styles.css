@@ -48,21 +48,17 @@ body {
   position: fixed;
   top: 0;
   z-index: 999;
-  height: 3rem;
 }
-
 #logo {
   transition: transform 0.5s ease, color 0.5s ease;
   cursor: pointer;
   font-family: "Fonarto", sans-serif;
   font-size: 1.5rem;
 }
-
 #logo:hover {
   transform: scale(1.125);
   color: var(--white);
 }
-
 .logo-a {
   text-decoration: none;
   display: flex;
@@ -95,9 +91,28 @@ body {
   font-family: "Fonarto", sans-serif;
   transition: color 0.5s ease;
 }
-.links a:hover {
+.links a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  background-color: var(--orange-color);
+  height: 2px;
+  left: 0;
+  bottom: 4px;
+  transition: 0.3s;
+
+}
+
+a:hover:after{
+  width: 100%;
+
+}
+
+a:hover{
+  /* color: #ff6100; */
   color: var(--white);
 }
+
 .links li {
   transition: transform 0.5s ease;
 }
@@ -108,6 +123,7 @@ body {
 #logo {
   color: var(--orange-color);
 }
+
 
 /* ====== */
 /* CONTAINER  */
@@ -386,8 +402,6 @@ body {
   overflow: hidden;
 }
 
-.container-portifolio .portfolio-grid
-
 .portfolio-item {
   margin: 1rem;
   background: #dee5ed;
@@ -418,17 +432,12 @@ body {
 /* ====== */
 /* ORÇAMENTO */
 /* ====== */
-.orcamento-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: var(--white);
-  font-family: Arial, sans-serif;
-}
 #orcamento {
   background-color: var(--white);
 }
-#orcamento .title-orcamento {
+
+.title-orcamento {
+  background-color: var(--white);
   font-size: 40px;
   text-transform: uppercase;
   color: var(--blue-color);
@@ -436,14 +445,31 @@ body {
   font-family: "Fonarto", Arial, sans-serif;
   text-align: center;
 }
+.orcamento-container {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 20px;
+  background-color: var(--white);
+  font-family: Arial, sans-serif;
+}
+
 .orcamento-form,
 .orcamento-info {
   flex: 1;
-  margin: 10px;
+  margin: 0px;
   padding: 20px;
   background-color: #eee;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orcamento-form {
+  border-radius: 8px 0 0 8px;
+  
+}
+
+.orcamento-info {
+  border-radius: 0 8px 8px 0;
+  border-left: 2px solid var(--second-color); 
 }
 
 .orcamento-form h2,
@@ -480,9 +506,20 @@ textarea {
   background-color: #45a049;
 }
 
+.orcamento-info h2 {
+  text-align: center;
+  color: var(--blue-color);
+  font-family: "Fonarto", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
 .orcamento-info p {
   margin: 10px 0;
   line-height: 1.6;
+  font-size: 30px;
+  padding: 17px;
+  font-family: "Fonarto", Arial, sans-serif;
 }
 
 .fa-phone,
@@ -491,14 +528,13 @@ textarea {
 .fa-envelope {
   margin-right: 10px;
 }
-
 /* ====== */
 /* FOOTER */
 /* ====== */
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 20px 0;
+  padding: 36px 0;
   font-family: "archimoto", Arial, sans-serif;
 
   width: 100%;
@@ -542,7 +578,7 @@ textarea {
 }
 
 .footer-section ul li {
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .social-icons a {
@@ -568,22 +604,11 @@ textarea {
 }
 
 .footer-policy a {
-  color: var(--white);
+  color: #ccc;
   margin-right: 20px;
   transition: color 0.3s;
 }
-.footer-section a {
-  text-decoration: none;
-  color: var(--white);
-}
 
 .footer-policy a:hover {
-  color: var(--orange-color);
-}
-.footer li {
-  transition: transform 0.4s ease, color 0.4s ease;
-}
-.footer li:hover {
-  transform: scale(1.09);
-  color: var(--orange-color);
+  color: #e65100;
 }
